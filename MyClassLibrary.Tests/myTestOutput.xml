@@ -1,28 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1" engine-version="3.2.1.0" clr-version="4.0.30319.42000" start-time="2016-06-16 18:25:22Z" end-time="2016-06-16 18:25:22Z" duration="0.152820">
+<test-run start-time="2016-06-18 22:19:55Z">
   <command-line><![CDATA["C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe"  --shadowcopy --noheader --nocolor --verbose .\bin\Debug\MyClassLibrary.Tests.dll --timeout=2000 --result=myTestOutput.xml --work=./]]></command-line>
-  <test-suite type="Assembly" id="0-1002" name="MyClassLibrary.Tests.dll" fullname="C:\Users\IEUser\Documents\Visual Studio 2015\Projects\Spikes\MyClassLibrary.Tests\bin\Debug\MyClassLibrary.Tests.dll" runstate="Runnable" testcasecount="1" result="Passed" start-time="2016-06-16 18:25:22Z" end-time="2016-06-16 18:25:22Z" duration="0.092572" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1">
-    <environment framework-version="3.2.1.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.10586.0" platform="Win32NT" cwd="C:\Users\IEUser\Documents\Visual Studio 2015\Projects\Spikes\MyClassLibrary.Tests" machine-name="MSEDGEWIN10" user="IEUser" user-domain="MSEDGEWIN10" culture="en-US" uiculture="en-US" os-architecture="x64" />
-    <settings>
-      <setting name="ShadowCopyFiles" value="True" />
-      <setting name="DefaultTimeout" value="2000" />
-      <setting name="WorkDirectory" value="./" />
-      <setting name="ImageRuntimeVersion" value="4.0.30319" />
-      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.5.2" />
-      <setting name="ImageRequiresX86" value="False" />
-      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
-      <setting name="NumberOfTestWorkers" value="2" />
-    </settings>
-    <properties>
-      <property name="_PID" value="5004" />
-      <property name="_APPDOMAIN" value="test-domain-" />
-    </properties>
-    <test-suite type="TestSuite" id="0-1003" name="MyClassLibrary" fullname="MyClassLibrary" runstate="Runnable" testcasecount="1" result="Passed" start-time="2016-06-16 18:25:22Z" end-time="2016-06-16 18:25:22Z" duration="0.072826" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1">
-      <test-suite type="TestSuite" id="0-1004" name="Tests" fullname="MyClassLibrary.Tests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2016-06-16 18:25:22Z" end-time="2016-06-16 18:25:22Z" duration="0.065615" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1">
-        <test-suite type="TestFixture" id="0-1000" name="FooTest" fullname="MyClassLibrary.Tests.FooTest" classname="MyClassLibrary.Tests.FooTest" runstate="Runnable" testcasecount="1" result="Passed" start-time="2016-06-16 18:25:22Z" end-time="2016-06-16 18:25:22Z" duration="0.052953" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="1">
-          <test-case id="0-1001" name="DoFooShouldReturnFoo" fullname="MyClassLibrary.Tests.FooTest.DoFooShouldReturnFoo" methodname="DoFooShouldReturnFoo" classname="MyClassLibrary.Tests.FooTest" runstate="Runnable" seed="798259755" result="Passed" start-time="2016-06-16 18:25:22Z" end-time="2016-06-16 18:25:22Z" duration="0.028472" asserts="1" />
-        </test-suite>
-      </test-suite>
-    </test-suite>
-  </test-suite>
 </test-run>
