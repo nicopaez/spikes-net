@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentMigrator, Version=1.6.2.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.1.6.2\lib\40\FluentMigrator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,22 +47,29 @@
     <Compile Include="Foo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="RunCodeAnalysis">
-<CreateItem Include=".\bin\Debug\*.dll">
-      	<Output TaskParameter="Include" ItemName="AssembliesToAnalyze" />
-    	</CreateItem>
-      <PropertyGroup>
-	<FxCopExe>"C:\BuildTools\FxCop\FxCopCmd.exe"</FxCopExe> 
-      </PropertyGroup>    
-      <Exec Command="$(FxCopExe) /f:@(AssembliesToAnalyze) /console" />
+   
+  <Target Name="RestorePackage" BeforeTargets="Compile" >
+    <PropertyGroup>
+      <NuGetExe>"C:\BuildTools\NuGet\nuget.exe"</NuGetExe>
+    </PropertyGroup>
+    <Exec Command="$(NuGetExe) restore -PackagesDirectory ../packages" />
   </Target>
+   
+  <Target Name="RunCodeAnalysis" DependsOnTargets="Compile">
+    <CreateItem Include=".\bin\Debug\$(MSBuildProjectName).dll">
+      <Output TaskParameter="Include" ItemName="AssembliesToAnalyze" />
+    </CreateItem>
+    <PropertyGroup>
+      <FxCopExe>"C:\BuildTools\FxCop\FxCopCmd.exe"</FxCopExe>
+    </PropertyGroup>
+    <Exec Command="$(FxCopExe) /f:@(AssembliesToAnalyze) /console" />
+  </Target>
+  
   <Import Project="..\packages\MSBuildTasks.1.5.0.196\build\MSBuildTasks.targets" Condition="Exists('..\packages\MSBuildTasks.1.5.0.196\build\MSBuildTasks.targets')" />
   <Import Project="c:\BuildTools\StyleCop\StyleCop.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\MSBuildTasks.1.5.0.196\build\MSBuildTasks.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuildTasks.1.5.0.196\build\MSBuildTasks.targets'))" />
-  </Target>
+ 
 </Project>
