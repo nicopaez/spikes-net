@@ -51,7 +51,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="RestorePackage" BeforeTargets="Compile">
+ <!--  <Target Name="RestorePackage" BeforeTargets="Compile">  -->
+  <Target Name="BeforeBuild" >
     <PropertyGroup>
       <NuGetExe>"C:\BuildTools\NuGet\nuget.exe"</NuGetExe>
     </PropertyGroup>
