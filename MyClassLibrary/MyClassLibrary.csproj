@@ -58,7 +58,7 @@
     <Exec Command="$(NuGetExe) restore -PackagesDirectory ../packages" />
   </Target>
   <Import Project="..\packages\MSBuildTasks.1.5.0.196\build\MSBuildTasks.targets" Condition="Exists('..\packages\MSBuildTasks.1.5.0.196\build\MSBuildTasks.targets')" />
-  <Import Project="c:\BuildTools\StyleCop\StyleCop.targets" />
+  <!-- <Import Project="c:\BuildTools\StyleCop\StyleCop.targets" />  -->
   <Target Name="RunCodeAnalysis" DependsOnTargets="Compile">
     <CreateItem Include=".\bin\Debug\$(MSBuildProjectName).dll">
       <Output TaskParameter="Include" ItemName="AssembliesToAnalyze" />
