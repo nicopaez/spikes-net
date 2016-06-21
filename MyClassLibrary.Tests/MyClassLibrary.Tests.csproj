@@ -83,6 +83,18 @@
   </Target>
   -->
   <Import Project="..\packages\MSBuildTasks.1.5.0.196\build\MSBuildTasks.targets" Condition="Exists('..\packages\MSBuildTasks.1.5.0.196\build\MSBuildTasks.targets')" />
+
+
+   <Target Name="RunTest">
+    <PropertyGroup>
+      <NUnitExe>"C:\BuildTools\NUnit\nunit-console\nunit3-console.exe"</NUnitExe>
+    </PropertyGroup>
+     <CreateItem Include=".\bin\Debug\*Tests.dll">
+      <Output TaskParameter="Include" ItemName="TestAssemblies" />
+    </CreateItem>
+    <Exec Command="$(NUnitExe) @(TestAssemblies)" />
+  </Target>
+
  <!--
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
