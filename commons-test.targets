@@ -1,0 +1,14 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project=".\commons.targets"/>
+  
+   <Target Name="RunTest" AfterTargets="Build">
+    <PropertyGroup>
+      <NUnitExe>"C:\BuildTools\NUnit\nunit-console\nunit3-console.exe"</NUnitExe>
+    </PropertyGroup>
+    <CreateItem Include=".\bin\Debug\*Tests.dll">
+      <Output TaskParameter="Include" ItemName="TestAssemblies" />
+    </CreateItem>
+    <Exec Command="$(NUnitExe) @(TestAssemblies)" />
+  </Target>
+  
+</Project>
