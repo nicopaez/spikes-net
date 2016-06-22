@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-run start-time="2016-06-18 22:19:55Z">
-  <command-line><![CDATA["C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe"  --shadowcopy --noheader --nocolor --verbose .\bin\Debug\MyClassLibrary.Tests.dll --timeout=2000 --result=myTestOutput.xml --work=./]]></command-line>
-</test-run>

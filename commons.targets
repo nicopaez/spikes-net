@@ -13,7 +13,7 @@
     <PropertyGroup>
       <FxCopExe>"C:\BuildTools\FxCop\FxCopCmd.exe"</FxCopExe>
     </PropertyGroup>
-    <Exec Command="$(FxCopExe) /f:@(AssembliesToAnalyze) /console" />
+    <Exec Command="$(FxCopExe) /f:@(AssembliesToAnalyze) /out:fxcop-results.xml" />
   </Target>
 
   <Import Project="..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" />
