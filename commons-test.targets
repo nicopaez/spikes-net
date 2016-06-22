@@ -8,7 +8,7 @@
     <CreateItem Include=".\bin\Debug\*Tests.dll">
       <Output TaskParameter="Include" ItemName="TestAssemblies" />
     </CreateItem>
-    <Exec Command="$(NUnitExe) @(TestAssemblies)" />
+    <Exec Command="$(NUnitExe) @(TestAssemblies) --result:TestResult.xml;transform=C:\BuildTools\NUnit\nunit3-junit.xslt" />
   </Target>
   
 </Project>
