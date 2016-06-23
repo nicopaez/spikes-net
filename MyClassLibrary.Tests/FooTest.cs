@@ -13,8 +13,7 @@ namespace MyClassLibrary.Tests
         [Test]
         public void DoFooShouldReturnFoo()
         {
-            Foo foo = new Foo();
-            Assert.AreEqual("Foo", foo.DoFoo());
+            Assert.AreEqual("Foo", Foo.DoFoo());
         }
     }
 }
