@@ -7,7 +7,7 @@
   <Target Name="Migrate" >
     <Message Text="Starting FluentMigrator Migration"/>
     <Migrate Database="mysql"
-             Connection="Server=127.0.0.1;Database=mydb;User Id=root;Password=;"
+             Connection="Server=127.0.0.1;Database=demo;User Id=root;Password=;"
              Target=".\bin\Debug\MyMigrations.dll">
     </Migrate>
   </Target>
@@ -16,7 +16,7 @@
     <Message Text="Starting FluentMigrator Migration Rollback"/>
 
     <Migrate Database="mysql"
-             Connection="Server=127.0.0.1;Database=mydb;User Id=root;Password=;"
+             Connection="Server=127.0.0.1;Database=demo;User Id=root;Password=;"
              Target="../../build/FluentMigrator.Example.dll"
 			 Task="rollback">
     </Migrate>
