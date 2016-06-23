@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Migrate">
+
+  <UsingTask TaskName="FluentMigrator.MSBuild.Migrate"
+       AssemblyFile="..\packages\FluentMigrator.1.6.2\tools\FluentMigrator.MSBuild.dll"/>
+
+  <Target Name="Migrate" >
+    <Message Text="Starting FluentMigrator Migration"/>
+    <Migrate Database="mysql"
+             Connection="Server=127.0.0.1;Database=mydb;User Id=root;Password=;"
+             Target=".\bin\Debug\MyMigrations.dll">
+    </Migrate>
+  </Target>
+
+  <Target Name="MigrateRollback" >
+    <Message Text="Starting FluentMigrator Migration Rollback"/>
+
+    <Migrate Database="mysql"
+             Connection="Server=127.0.0.1;Database=mydb;User Id=root;Password=;"
+             Target="../../build/FluentMigrator.Example.dll"
+			 Task="rollback">
+    </Migrate>
+  </Target>
+
+  <Target Name="MigrateRollbackAll" >
+    <Message Text="Starting FluentMigrator Migration Rollback All"/>
+
+    <Migrate Database="postgres"
+             Connection="Server=127.0.0.1;Port=5432;Database=FluentMigrator;User Id=test;Password=test;"
+             Target="../../build/FluentMigrator.Example.dll"
+	     Task="rollback:all">
+    </Migrate>
+  </Target>
+
+</Project>
