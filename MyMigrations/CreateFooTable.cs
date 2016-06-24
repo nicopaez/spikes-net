@@ -1,7 +1,7 @@
-﻿namespace MyMigrations
-{
-    using FluentMigrator;
+﻿using FluentMigrator;
 
+namespace MyMigrations
+{
     [Migration(1)]
     public class CreateFooTable : Migration
     {
