@@ -12,8 +12,8 @@
      <StyleCopOutputFile>StyleCopViolations.xml</StyleCopOutputFile>
   </PropertyGroup>
   <Import Project=".\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets" Condition="Exists('.\packages\StyleCop.MSBuild.4.7.54.0\build\StyleCop.MSBuild.Targets')" />
-  <Target Name="RunCodeAnalysis" DependsOnTargets="Compile">
-    <CreateItem Include=".\bin\Debug\$(MSBuildProjectName).dll">
+  <Target Name="AfterBuild">
+    <CreateItem Include=".\bin\$(Configuration)\$(MSBuildProjectName).dll">
       <Output TaskParameter="Include" ItemName="AssembliesToAnalyze" />
     </CreateItem>
     <PropertyGroup>
